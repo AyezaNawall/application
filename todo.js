@@ -222,8 +222,7 @@ let oncheck=(checkbox,para,container)=>{
         }
     })
     }
-
-let appear = inputv.addEventListener("keydown", function(event) {
+ inputv.addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
         userinput();
         
@@ -235,6 +234,8 @@ let appear = inputv.addEventListener("keydown", function(event) {
 
   const modalElement = document.getElementById('myModal');
   const myModal = new bootstrap.Modal(modalElement);
+  const modalElement2 = document.getElementById('myModal2');
+  const myModal2 = new bootstrap.Modal(modalElement2);
 
   
 document.addEventListener('click', function (e) {
@@ -260,21 +261,19 @@ document.getElementById("save").addEventListener("click", function () {
   }
 });
 
-document.addEventListener('click', function (e) {
-  if (e.target.classList.contains('deletebtn'))
-  {
-    alert("warning");
-  }
-});
+
 document.addEventListener('click', function (e) {
   if (e.target.classList.contains('btn-danger')) {
     const deleteId = e.target.getAttribute("deletebtn-id");
     const containerToDelete = document.querySelector(`[container-id="${deleteId}"]`);
 
     if (containerToDelete) {
-      const confirmDelete = confirm("Are you sure you want to delete this task?");
-      if (confirmDelete) {
-        containerToDelete.remove();
+      myModal2.show();
+      document.getElementById("delete").addEventListener("click", function () {
+      containerToDelete.remove();
+      myModal2.hide();
+    });
+    
 
         let comptask = document.querySelector(".comptask");
         let taskContainer = document.querySelector("#actualtasks");
@@ -289,10 +288,10 @@ document.addEventListener('click', function (e) {
     
       }
     }
-  }
+  })
 });
 
-});
+// });
 
         
    

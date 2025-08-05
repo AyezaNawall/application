@@ -93,7 +93,6 @@ opacity: 0.5;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 5px;
     
 }
 #deletebtn{
@@ -102,10 +101,11 @@ opacity: 0.5;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 0;
+    margin-left:20px;
 }
 .button-wrapper {
     height: 100%;
+    width: auto;
 }
 #container2{
     margin-left: 0%;
@@ -174,4 +174,8 @@ h4{
     margin: 0 !important;
     padding: 0 !important;
     padding-left: 10px !important;
+}
+.bodydiv{
+    height: 50px;
+    font-size: 25px;
 }
